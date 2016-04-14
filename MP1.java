@@ -1,8 +1,11 @@
-import java.io.File;
-import java.lang.reflect.Array;
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.*;
+import java.io.File;
+import java.lang.reflect.Array;
+import java.security.MessageDigest;
 
 public class MP1 {
     Random generator;
@@ -51,8 +54,15 @@ public class MP1 {
 
     public String[] process() throws Exception {
         String[] ret = new String[20];
-       
-        //TODO
+        BufferedReader in = new BufferedReader(new FileReader(inputFileName));
+        String line;
+        while((line = in.readLine()) != null)
+        {
+        	String[] result = line.split(delimiters);
+            for (int x=0; x<result.length; x++)
+                System.out.println(result[x]);
+        }
+        in.close();
 
         return ret;
     }
